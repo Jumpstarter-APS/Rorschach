@@ -13,17 +13,21 @@ import PostNew from './pages/PostNew'
 //import react router
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
+//mockData
+import post from './mockData.js'
+
 class App extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     posts: []
-  //   }
-  // }
+  constructor(props){
+    super(props)
+    this.state = {
+      posts: post
+    }
+  }
 
   render () {
     console.log("logged in", this.props.logged_in)
     console.log("current user", this.props.current_user)
+    console.log("state", this.state.posts)
     // console.log(this.state.posts)
     const {
       logged_in,
@@ -48,7 +52,7 @@ class App extends Component {
           <Route
             path='/postindex'
             render= { (props) => <PostIndex
-              // posts={ this.state.posts }
+              posts={ this.state.posts }
             />
             }
           />
