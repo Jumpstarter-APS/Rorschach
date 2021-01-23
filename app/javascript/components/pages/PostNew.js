@@ -13,13 +13,19 @@ class ApartmentNew extends Component{
     super(props)
     this.state = {
       form:{
-        id: "",
         pic: "",
         des: "",
         user_id: this.props.current_user.id
       },
       submitted: false
     }
+
+    //fetch picture here
+    //fetch picture
+    //look into the security of api key
+    //set state to fetched image
+    //make an onclick that gives you a new image. limit 3 times
+
   }
   handleChange = (e) => {
     let { form } = this.state
@@ -28,7 +34,7 @@ class ApartmentNew extends Component{
   }
 
   handleSubmit = () => {
-    this.props.createNewApartment(this.state.form)
+    this.props.createNewPost(this.state.form)
     this.setState({ submitted: true })
   }
 
@@ -43,29 +49,21 @@ class ApartmentNew extends Component{
                 <Label>Pic</Label>
                 <Input
                   type="text"
-                  name="street"
+                  name="pic"
                   onChange={ this.handleChange }
-                  value={ this.state.form.street }
+                  value={ this.state.form.pic }
                 />
               </FormGroup>
               <FormGroup>
                 <Label>Des</Label>
                 <Input
                   type="text"
-                  name="city"
+                  name="des"
                   onChange={ this.handleChange }
-                  value={ this.state.form.city }
+                  value={ this.state.form.des }
                 />
               </FormGroup>
-              <FormGroup>
-                <Label>State</Label>
-                <Input
-                  type="text"
-                  name="state"
-                  onChange={ this.handleChange }
-                  value={ this.state.form.state }
-                />
-              </FormGroup>
+            
               <Button
                 name="submit"
                 color="secondary"
@@ -76,7 +74,7 @@ class ApartmentNew extends Component{
             </Form>
           </div>
         </div>
-        { this.state.submitted && <Redirect to="/myapartments" /> }
+        { this.state.submitted && <Redirect to="/postindex" /> }
       </React.Fragment>
     )
   }

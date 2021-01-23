@@ -18,6 +18,8 @@ class PostIndex extends Component{
               </div>
             )
           })}
+
+          {/* make a button to take you to show page of individual post */}
         </div>
       </React.Fragment>
     )

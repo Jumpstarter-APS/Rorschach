@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import NotFound from './pages/NotFound'
 import PostIndex from './pages/PostIndex'
-import PostProtected from './pages/PostProtected'
+import PostProfile from './pages/PostProfile'
 import PostShow from './pages/PostShow'
 import PostNew from './pages/PostNew'
 //import react router
@@ -22,6 +22,14 @@ class App extends Component {
     this.state = {
       posts: post
     }
+  }
+
+  createNewPost = (newpost) => {
+    console.log(newpost)
+  }
+
+  deletePost = (post) => {
+    console.log(post)
   }
 
   render () {
@@ -64,7 +72,11 @@ class App extends Component {
               let id = props.match.params.id
               let post = this.state.posts.find(post => post.id === parseInt(id))
               return (
-                <PostShow post={ post } />
+                <PostShow 
+                post={ post }
+                current_user={ current_user }
+
+                 />
                 //use conditional rendering to show delete for user
                 //if post does not belong to user do not show delete
                 //pass down current user id and user id
@@ -76,13 +88,13 @@ class App extends Component {
           {/* -----Protected Post Index----- */}
           { logged_in &&
             <Route
-              path="/postprotected"
+              path="/postprofile"
               render={ (props) => {
                 let id = this.props.current_user.id
                 let mypost = this.state.posts.filter(post => post.user_id === id)
                 return(
-                  <PostProtected mypost={ mypost } 
-                  // deletePost={ this.deletePost }
+                  <PostProfile mypost={ mypost } 
+                  deletePost={ this.deletePost }
                   />
                 )
               }}
@@ -97,7 +109,7 @@ class App extends Component {
               render={ (props) => {
                 return (
                   <PostNew current_user={ current_user } 
-                  // createNewPost={ this.createNewPost } 
+                  createNewPost={ this.createNewPost } 
                   />
                 )
               }}
