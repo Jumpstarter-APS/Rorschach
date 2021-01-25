@@ -11,112 +11,111 @@ import PostProfile from './pages/PostProfile'
 import PostShow from './pages/PostShow'
 import PostNew from './pages/PostNew'
 //import react router
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 //mockData
 import post from './mockData.js'
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      posts: post
-    }
-  }
+	constructor(props) {
+		super(props)
+		this.state = {
+			posts: post,
+		}
+	}
 
-  createNewPost = (newpost) => {
-    console.log(newpost)
-  }
+	createNewPost = (newpost) => {
+		console.log(newpost)
+	}
 
-  deletePost = (post) => {
-    console.log(post)
-  }
+	deletePost = (post) => {
+		console.log(post)
+	}
 
-  render () {
-    console.log("logged in", this.props.logged_in)
-    console.log("current user", this.props.current_user)
-    console.log("state", this.state.posts)
-    // console.log(this.state.posts)
-    const {
-      logged_in,
-      current_user,
-      new_user_route,
-      sign_in_route,
-      sign_out_route,
-    } = this.props
+	render() {
+		console.log('logged in', this.props.logged_in)
+		console.log('current user', this.props.current_user)
+		console.log('state', this.state.posts)
+		// console.log(this.state.posts)
+		const {
+			logged_in,
+			current_user,
+			new_user_route,
+			sign_in_route,
+			sign_out_route,
+		} = this.props
 
-    return (
-      <Router>
-        <Header
-          logged_in={ logged_in }
-          new_user_route={ new_user_route }
-          sign_in_route={ sign_in_route }
-          sign_out_route={ sign_out_route }
-        />
-        <Switch>
-          <Route exact path='/' component={ Home } />
+		return (
+			<Router>
+				<Header
+					logged_in={logged_in}
+					new_user_route={new_user_route}
+					sign_in_route={sign_in_route}
+					sign_out_route={sign_out_route}
+				/>
+				<Switch>
+					<Route exact path='/' component={Home} />
 
-          {/* -----Index----- */}
-          <Route
-            path='/postindex'
-            render= { (props) => <PostIndex
-              posts={ this.state.posts }
-            />
-            }
-          />
+					{/* -----Index----- */}
+					<Route
+						path='/postindex'
+						render={(props) => <PostIndex posts={this.state.posts} />}
+					/>
 
-          {/* -----Post Show----- */}
-          <Route
-            path='/postshow/:id'
-            render={ (props) => {
-              let id = props.match.params.id
-              let post = this.state.posts.find(post => post.id === parseInt(id))
-              return (
-                <PostShow 
-                post={ post }
-                current_user={ current_user }
+					{/* -----Post Show----- */}
+					<Route
+						path='/postshow/:id'
+						render={(props) => {
+							let id = props.match.params.id
+							let post = this.state.posts.find(
+								(post) => post.id === parseInt(id)
+							)
+							return (
+								<PostShow
+									logged_in={logged_in}
+									post={post}
+									current_user={current_user}
+								/>
+								//use conditional rendering to show delete for user
+								//if post does not belong to user do not show delete
+								//pass down current user id and user id
+								//if the above match show delete button
+							)
+						}}
+					/>
 
-                 />
-                //use conditional rendering to show delete for user
-                //if post does not belong to user do not show delete
-                //pass down current user id and user id
-                //if the above match show delete button
-              )
-            }}
-          />
+					{/* -----Protected Post Index----- */}
+					{logged_in && (
+						<Route
+							path='/postprofile'
+							render={(props) => {
+								let id = this.props.current_user.id
+								let mypost = this.state.posts.filter(
+									(post) => post.user_id === id
+								)
+								return (
+									<PostProfile mypost={mypost} deletePost={this.deletePost} />
+								)
+							}}
+						/>
+					)}
 
-          {/* -----Protected Post Index----- */}
-          { logged_in &&
-            <Route
-              path="/postprofile"
-              render={ (props) => {
-                let id = this.props.current_user.id
-                let mypost = this.state.posts.filter(post => post.user_id === id)
-                return(
-                  <PostProfile mypost={ mypost } 
-                  deletePost={ this.deletePost }
-                  />
-                )
-              }}
-            />
-          }
+					{/* -----Protected Post New----- */}
+					{logged_in && (
+						<Route
+							path='/postnew'
+							render={(props) => {
+								return (
+									<PostNew
+										current_user={current_user}
+										createNewPost={this.createNewPost}
+									/>
+								)
+							}}
+						/>
+					)}
 
-
-          {/* -----Protected Post New----- */}
-          { logged_in &&
-            <Route
-              path="/postnew"
-              render={ (props) => {
-                return (
-                  <PostNew current_user={ current_user } 
-                  createNewPost={ this.createNewPost } 
-                  />
-                )
-              }}
-            />
-          }
-
-          {/* ----- Protected Post Edit STRETCH GOAL-----
+					{/* ----- Protected Post Edit STRETCH GOAL-----
           { logged_in &&
             <Route
               path="/postedit/:id"
@@ -134,12 +133,11 @@ class App extends Component {
             />
           } */}
 
-          <Route component={ NotFound } />
-
-        </Switch>
-      </Router>
-    );
-  }
+					<Route component={NotFound} />
+				</Switch>
+			</Router>
+		)
+	}
 }
 
 export default App
