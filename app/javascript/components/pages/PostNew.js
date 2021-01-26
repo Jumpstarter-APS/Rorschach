@@ -11,6 +11,7 @@ class ApartmentNew extends Component {
 				des: '',
 				user_id: this.props.current_user.id,
 			},
+			clicks: 0,
 			submitted: false,
 		}
 
@@ -37,15 +38,21 @@ class ApartmentNew extends Component {
 	}
 
 	getNewPic = () => {
+
 		fetch(
-			'https://api.unsplash.com/photos/?client_id=-KQ11bQIym0-9gUNFtSQFdHMniZjFTIOp21lbrBFS1M'
+			'https://picsum.photos/v2/list?page=2&limit=1000'
 		)
 			.then((response) => {
 				return response.json()
 			})
 			.then((payload) => {
+				let {form} = {...this.state}
+				// let picPayload = payload[Math.floor(Math.random() * 90)].download_url
+				form.pic = payload[Math.floor(Math.random() * 90)].download_url
+				// form.pic = picPayload
+				console.log("picturepayload:",form)
 				this.setState({
-					pic: payload[Math.floor(Math.random() * 10)].urls.small,
+					form: form
 				})
 			})
 			.catch((error) => {
@@ -53,27 +60,29 @@ class ApartmentNew extends Component {
 			})
 	}
 
+	newPicClick = () => {
+
+		if(this.state.clicks < 3){
+			this.getNewPic()
+			this.setState({clicks: this.state.clicks + 1})
+		}
+
+	}
+
 	render() {
-		console.log(this.state.pic)
+		// console.log("picture:",this.state.picture)
+		console.log("pic inside of form:",this.state.form.pic)
+		console.log("form:",this.state.form)
+		console.log("state:", this.state)
 		return (
 			<React.Fragment>
-				{/* <h3>Add an Post</h3>
+				<h3>Add a Post</h3>
 				<div className='body-container'>
 					<div className='form'>
+					<img src={this.state.form.pic} height='600' width='600' alt='' />
 						<Form>
 							<FormGroup>
-								<Label>
-									<img src={this.state.pic} alt='A random image' />
-								</Label>
-								<Input
-									type='text'
-									name='pic'
-									onChange={this.handleChange}
-									value={this.state.form.pic}
-								/>
-							</FormGroup>
-							<FormGroup>
-								<Label>Des</Label>
+								<Label>Description</Label>
 								<Input
 									type='text'
 									name='des'
@@ -89,10 +98,13 @@ class ApartmentNew extends Component {
 							>
 								Add a New Post
 							</Button>
+
+							<Button onClick ={this.newPicClick}>Click for New Picture({this.state.clicks}/3 clicks)</Button>
+
 						</Form>
 					</div>
 				</div>
-				{this.state.submitted && <Redirect to='/postindex' />}
+				{/* {this.state.submitted && <Redirect to='/postindex' />}
 				{this.state.pic && (
 					<div>
 						<img
@@ -102,8 +114,9 @@ class ApartmentNew extends Component {
 						/>
 					</div>
 				)} */}
-				<img src={this.state.pic} alt='' />
+				{/* <img src={this.state.pic} height='600' width='600' alt='' />
 				<h2>image:{this.state.pic}</h2>
+				<Button onClick={this.getNewPic}>New Image</Button> */}
 			</React.Fragment>
 		)
 	}
