@@ -11,6 +11,7 @@ class ApartmentNew extends Component {
 				des: '',
 				user_id: this.props.current_user.id,
 			},
+			clicks: 0,
 			submitted: false,
 		}
 
@@ -46,8 +47,9 @@ class ApartmentNew extends Component {
 			})
 			.then((payload) => {
 				let {form} = {...this.state}
-				let picPayload = payload[Math.floor(Math.random() * 90)].download_url
-				form.pic = picPayload
+				// let picPayload = payload[Math.floor(Math.random() * 90)].download_url
+				form.pic = payload[Math.floor(Math.random() * 90)].download_url
+				// form.pic = picPayload
 				console.log("picturepayload:",form)
 				this.setState({
 					form: form
@@ -56,6 +58,15 @@ class ApartmentNew extends Component {
 			.catch((error) => {
 				console.log(error)
 			})
+	}
+
+	newPicClick = () => {
+
+		if(this.state.clicks < 3){
+			this.getNewPic()
+			this.setState({clicks: this.state.clicks + 1})
+		}
+
 	}
 
 	render() {
@@ -87,6 +98,9 @@ class ApartmentNew extends Component {
 							>
 								Add a New Post
 							</Button>
+
+							<Button onClick ={this.newPicClick}>Click for New Picture({this.state.clicks}/3 clicks)</Button>
+
 						</Form>
 					</div>
 				</div>
