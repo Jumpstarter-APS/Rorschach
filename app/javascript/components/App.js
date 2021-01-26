@@ -26,6 +26,23 @@ class App extends Component {
 
 	createNewPost = (newpost) => {
 		console.log(newpost)
+		// 	return fetch("/posts",{
+		//   body: JSON.stringify(newPost),
+		//   headers: {
+		//     "Content-Type": "application/json"
+		//   },
+		//   method: "POST"
+		// })
+		// .then(response => {
+		//   if(response.status === 422){
+		//     alert("There was an error when submitting")
+		//   }
+		//   return response.json()
+		// })
+		// .then(payload) => {
+
+		// }
+		// }
 	}
 
 	deletePost = (post) => {

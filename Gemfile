@@ -3,6 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+
+
+# Adds CORS
+
+gem 'rack-cors', :require => 'rack/cors'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
 # Use postgresql as the database for Active Record
@@ -54,3 +61,5 @@ gem "rspec-rails", "~> 4.0"
 gem "devise", "~> 4.7"
 
 gem "bootstrap", "~> 4.5"
+
+
