@@ -25,7 +25,7 @@ class App extends Component {
 	}
 
 	createNewPost = (newpost) => {
-		console.log(newpost)
+		console.log("App.js form:",newpost)
 		// 	return fetch("/posts",{
 		//   body: JSON.stringify(newPost),
 		//   headers: {
