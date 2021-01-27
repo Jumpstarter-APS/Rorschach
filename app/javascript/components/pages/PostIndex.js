@@ -13,7 +13,7 @@ class PostIndex extends Component {
 						this.props.posts.map((post, index) => {
 							return (
 								<div key={index}>
-									<img src={post.pic}></img>
+									<img src={post.pic} height='500px' width='500px'></img>
 									<h5>Description: {post.des}</h5>
 									<h5>ID: {post.id}</h5>
 									<h5>User ID: {post.user_id}</h5>

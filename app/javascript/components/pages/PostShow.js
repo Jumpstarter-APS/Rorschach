@@ -12,13 +12,17 @@ class PostShow extends Component {
 				<h3>Show Page</h3>
 				<div>
 					<div>
-						<img src={post.pic}></img>
+						<img src={post.pic} height='500px' width='500px'></img>
 						<h5>Des:{post.des}</h5>
 						<h5>ID:{post.id}</h5>
 						<h5>User ID:{post.user_id}</h5>
 
 						{logged_in === true && post.user_id === current_user.id && (
-							<Button>Delete</Button>
+							<NavLink to={'/postindex'}>
+								<Button onClick={() => this.props.deletePost(post.id)}>
+									Delete
+								</Button>
+							</NavLink>
 						)}
 
 						<br />

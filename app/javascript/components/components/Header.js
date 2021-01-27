@@ -26,7 +26,7 @@ class Header extends Component {
 									<a href={sign_out_route}>Sign Out</a>
 								</li>
 								<li>
-									<NavLink to='/postprotected'>My Posts</NavLink>
+									<NavLink to='/postprofile'>My Posts</NavLink>
 								</li>
 								<li>
 									<NavLink to='/postnew'>Add Post</NavLink>
