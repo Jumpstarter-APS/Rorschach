@@ -38,21 +38,18 @@ class ApartmentNew extends Component {
 	}
 
 	getNewPic = () => {
-
-		fetch(
-			'https://picsum.photos/v2/list?page=2&limit=1000'
-		)
+		fetch('https://picsum.photos/v2/list?page=2&limit=1000')
 			.then((response) => {
 				return response.json()
 			})
 			.then((payload) => {
-				let {form} = {...this.state}
+				let { form } = { ...this.state }
 				// let picPayload = payload[Math.floor(Math.random() * 90)].download_url
 				form.pic = payload[Math.floor(Math.random() * 90)].download_url
 				// form.pic = picPayload
-				console.log("picturepayload:",form)
+				console.log('picturepayload:', form)
 				this.setState({
-					form: form
+					form: form,
 				})
 			})
 			.catch((error) => {
@@ -61,25 +58,23 @@ class ApartmentNew extends Component {
 	}
 
 	newPicClick = () => {
-
-		if(this.state.clicks < 3){
+		if (this.state.clicks < 3) {
 			this.getNewPic()
-			this.setState({clicks: this.state.clicks + 1})
+			this.setState({ clicks: this.state.clicks + 1 })
 		}
-
 	}
 
 	render() {
 		// console.log("picture:",this.state.picture)
-		console.log("pic inside of form:",this.state.form.pic)
-		console.log("form:",this.state.form)
-		console.log("state:", this.state)
+		console.log('pic inside of form:', this.state.form.pic)
+		console.log('form:', this.state.form)
+		console.log('state:', this.state)
 		return (
 			<React.Fragment>
 				<h3>Add a Post</h3>
 				<div className='body-container'>
 					<div className='form'>
-					<img src={this.state.form.pic} height='600' width='600' alt='' />
+						<img src={this.state.form.pic} height='600' width='600' alt='' />
 						<Form>
 							<FormGroup>
 								<Label>Description</Label>
@@ -98,25 +93,13 @@ class ApartmentNew extends Component {
 							>
 								Add a New Post
 							</Button>
-
-							<Button onClick ={this.newPicClick}>Click for New Picture({this.state.clicks}/3 clicks)</Button>
-
+							<Button onClick={this.newPicClick}>
+								Click for New Picture({this.state.clicks}/3 clicks)
+							</Button>
 						</Form>
 					</div>
 				</div>
-				{/* {this.state.submitted && <Redirect to='/postindex' />}
-				{this.state.pic && (
-					<div>
-						<img
-							onClick={this.getNewPic}
-							src={this.state.pic}
-							alt='Random Image'
-						/>
-					</div>
-				)} */}
-				{/* <img src={this.state.pic} height='600' width='600' alt='' />
-				<h2>image:{this.state.pic}</h2>
-				<Button onClick={this.getNewPic}>New Image</Button> */}
+				{this.state.submitted && <Redirect to='/postindex' />}
 			</React.Fragment>
 		)
 	}

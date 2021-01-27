@@ -24,70 +24,68 @@ class App extends Component {
 		}
 	}
 
-	componentDidMount(){
+	componentDidMount() {
 		this.indexPost()
-	  }
-	  indexPost = () => {
-		fetch("/posts")
-		.then(response => {
-		  return response.json()
-		})
-		.then(payload => {
-		  this.setState({ posts: payload })
-		})
-		.catch(errors => {
-		  console.log("index errors:", errors)
-		})
-	  }
+	}
+	indexPost = () => {
+		fetch('/posts')
+			.then((response) => {
+				return response.json()
+			})
+			.then((payload) => {
+				this.setState({ posts: payload })
+			})
+			.catch((errors) => {
+				console.log('index errors:', errors)
+			})
+	}
 
 	createNewPost = (newpost) => {
-		console.log("appjsform", newpost)
-		fetch("/posts", {
-		  body: JSON.stringify(newpost),
-		  headers: {
-			"Content-Type": "application/json"
-		  },
-		  method: "POST"
+		console.log('appjsform', newpost)
+		fetch('/posts', {
+			body: JSON.stringify(newpost),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			method: 'POST',
 		})
-		.then(response => {
-		  if(response.status === 422){
-			alert("There is something wrong with your submission.")
-		  }
-		  return response.json()
-		})
-		.then(() => {
-		  this.indexPost()
-		})
-		.catch(errors => {
-		  console.log("create errors", errors)
-		})
-	  }
-
+			.then((response) => {
+				if (response.status === 422) {
+					alert('There is something wrong with your submission.')
+				}
+				return response.json()
+			})
+			.then(() => {
+				this.indexPost()
+			})
+			.catch((errors) => {
+				console.log('create errors', errors)
+			})
+	}
 
 	deletePost = (post) => {
-		console.log("delete post", post)
-		alert("Delete this listing?")
-    fetch(`/posts/${id}`, {
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "DELETE"
-    })
-    .then(response => {
-      console.log(response)
-      if(response.status === 422){
-        alert("There is something wrong with your submission.")
-      }
-      return response.json()
-    })
-    .then(() => {
-      this.indexPost()
-    })
-    .catch(errors => {
-      console.log("create errors", errors)
-    })
-  }
-
+		console.log('delete post', post)
+		alert('Delete this listing?')
+		fetch(`/posts/${post}`, {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			method: 'DELETE',
+		})
+			.then((response) => {
+				console.log(response)
+				if (response.status === 422) {
+					alert('There is something wrong with your submission.')
+				}
+				return response.json()
+			})
+			.then(() => {
+				this.indexPost()
+			})
+			.catch((errors) => {
+				console.log('create errors', errors)
+			})
+	}
 
 	render() {
 		console.log('logged in', this.props.logged_in)
@@ -132,6 +130,7 @@ class App extends Component {
 									logged_in={logged_in}
 									post={post}
 									current_user={current_user}
+									deletePost={this.deletePost}
 								/>
 								//use conditional rendering to show delete for user
 								//if post does not belong to user do not show delete
