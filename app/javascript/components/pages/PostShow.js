@@ -7,7 +7,6 @@ class PostShow extends Component {
 		const { post } = this.props
 		const { current_user } = this.props
 		const { logged_in } = this.props
-		debugger
 		return (
 			<>
 				<h3>Show Page</h3>
