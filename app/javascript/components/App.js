@@ -20,34 +20,74 @@ class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			posts: post,
+			posts: [],
 		}
 	}
 
-	createNewPost = (newpost) => {
-		console.log("App.js form:",newpost)
-		// 	return fetch("/posts",{
-		//   body: JSON.stringify(newPost),
-		//   headers: {
-		//     "Content-Type": "application/json"
-		//   },
-		//   method: "POST"
-		// })
-		// .then(response => {
-		//   if(response.status === 422){
-		//     alert("There was an error when submitting")
-		//   }
-		//   return response.json()
-		// })
-		// .then(payload) => {
+	componentDidMount(){
+		this.indexPost()
+	  }
+	  indexPost = () => {
+		fetch("/posts")
+		.then(response => {
+		  return response.json()
+		})
+		.then(payload => {
+		  this.setState({ posts: payload })
+		})
+		.catch(errors => {
+		  console.log("index errors:", errors)
+		})
+	  }
 
-		// }
-		// }
-	}
+	createNewPost = (newpost) => {
+		console.log("appjsform", newpost)
+		fetch("/posts", {
+		  body: JSON.stringify(newpost),
+		  headers: {
+			"Content-Type": "application/json"
+		  },
+		  method: "POST"
+		})
+		.then(response => {
+		  if(response.status === 422){
+			alert("There is something wrong with your submission.")
+		  }
+		  return response.json()
+		})
+		.then(() => {
+		  this.indexPost()
+		})
+		.catch(errors => {
+		  console.log("create errors", errors)
+		})
+	  }
+
 
 	deletePost = (post) => {
-		console.log(post)
-	}
+		console.log("delete post", post)
+		alert("Delete this listing?")
+    fetch(`/posts/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      console.log(response)
+      if(response.status === 422){
+        alert("There is something wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(() => {
+      this.indexPost()
+    })
+    .catch(errors => {
+      console.log("create errors", errors)
+    })
+  }
+
 
 	render() {
 		console.log('logged in', this.props.logged_in)
