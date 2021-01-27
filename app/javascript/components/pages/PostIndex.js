@@ -17,11 +17,11 @@ class PostIndex extends Component {
 									<h5>Description: {post.des}</h5>
 									<h5>ID: {post.id}</h5>
 									<h5>User ID: {post.user_id}</h5>
-									<Button>
 										<NavLink to={`/postshow/${post.id}`}>
+									<Button>
 											Click to see post!
-										</NavLink>
 									</Button>
+										</NavLink>
 								</div>
 							)
 						})}
