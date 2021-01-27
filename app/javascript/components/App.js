@@ -28,6 +28,7 @@ class App extends Component {
 		this.indexPost()
 	}
 	indexPost = () => {
+		debugger
 		fetch('/posts')
 			.then((response) => {
 				return response.json()

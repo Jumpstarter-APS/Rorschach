@@ -87,13 +87,13 @@ class ApartmentNew extends Component {
 							</FormGroup>
 
 							<Button
-								name='submit'
+								type='submit'
 								color='secondary'
 								onClick={this.handleSubmit}
 							>
 								Add a New Post
 							</Button>
-							<Button onClick={this.newPicClick}>
+							<Button type= 'button' onClick={this.newPicClick}>
 								Click for New Picture({this.state.clicks}/3 clicks)
 							</Button>
 						</Form>

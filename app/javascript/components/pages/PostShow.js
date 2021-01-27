@@ -7,11 +7,14 @@ class PostShow extends Component {
 		const { post } = this.props
 		const { current_user } = this.props
 		const { logged_in } = this.props
+		debugger
 		return (
 			<>
 				<h3>Show Page</h3>
+				{ post && (
 				<div>
 					<div>
+				
 						<img src={post.pic} height='500px' width='500px'></img>
 						<h5>Des:{post.des}</h5>
 						<h5>ID:{post.id}</h5>
@@ -29,8 +32,12 @@ class PostShow extends Component {
 						<NavLink to='/postindex'>
 							<Button color='secondary'>Back to All Post</Button>
 						</NavLink>
+	                
+				   
 					</div>
+					
 				</div>
+				)}
 			</>
 		)
 	}
