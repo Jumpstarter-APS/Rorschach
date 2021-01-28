@@ -1,33 +1,49 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Button } from 'reactstrap'
+import {
+	ListGroup,
+	ListGroupItemHeading,
+	ListGroupItemText,
+	Button,
+} from 'reactstrap'
 
 class PostIndex extends Component {
 	render() {
-		const { post } = this.props
+		const { posts } = this.props
 		return (
 			<React.Fragment>
-				<h3>All the Posts</h3>
-				<div>
-					{this.props.posts &&
-						this.props.posts.map((post, index) => {
-							return (
-								<div key={index}>
-									<img src={post.pic} height='500px' width='500px'></img>
-									<h5>Description: {post.des}</h5>
-									<h5>ID: {post.id}</h5>
-									<h5>User ID: {post.user_id}</h5>
-										<NavLink to={`/postshow/${post.id}`}>
-									<Button>
-											Click to see post!
-									</Button>
-										</NavLink>
-								</div>
-							)
-						})}
+				<h1 style={{ textAlign: 'center' }}>All the Posts</h1>
 
-					{/* make a button to take you to show page of individual post */}
-				</div>
+				<>
+					<div className='cats-display-wrapper'>
+						{posts &&
+							posts.map((post, index) => {
+								return (
+									<NavLink to={`/postshow/${post.id}`} id='details' key={index}>
+										<ListGroup
+											className='cat-wrapper'
+											style={{ width: '300px' }}
+										>
+											<img src={post.pic} />
+											<div className='cat-description-wrapper'>
+												<h4>
+													{/* This will display username */}
+													{post.id}
+													<br></br>
+												</h4>
+												<br></br>
+												<div>
+													<ListGroupItemText>
+														Description: {post.des}{' '}
+													</ListGroupItemText>
+												</div>
+											</div>
+										</ListGroup>
+									</NavLink>
+								)
+							})}
+					</div>
+				</>
 			</React.Fragment>
 		)
 	}
