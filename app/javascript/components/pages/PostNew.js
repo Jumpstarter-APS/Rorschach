@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
 
-class ApartmentNew extends Component {
+class PostNew extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -32,7 +32,8 @@ class ApartmentNew extends Component {
 		this.setState({ form: form })
 	}
 
-	handleSubmit = () => {
+	handleSubmit = (event) => {
+		event.preventDefault()
 		this.props.createNewPost(this.state.form)
 		this.setState({ submitted: true })
 	}
@@ -93,7 +94,7 @@ class ApartmentNew extends Component {
 							>
 								Add a New Post
 							</Button>
-							<Button type= 'button' onClick={this.newPicClick}>
+							<Button type='button' onClick={this.newPicClick}>
 								Click for New Picture({this.state.clicks}/3 clicks)
 							</Button>
 						</Form>
@@ -104,4 +105,4 @@ class ApartmentNew extends Component {
 		)
 	}
 }
-export default ApartmentNew
+export default PostNew
