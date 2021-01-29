@@ -23,7 +23,7 @@ class Header extends Component {
 						{logged_in && (
 							<>
 								<NavLink className='header-link' href='/postprofile'>
-									My Post
+									My Posts
 								</NavLink>
 								<NavLink className='header-link' href='/postnew'>
 									New Post
