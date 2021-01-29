@@ -33,9 +33,7 @@ class PostIndex extends Component {
 												</h4>
 												<br></br>
 												<div>
-													<ListGroupItemText>
-														Description: {post.des}{' '}
-													</ListGroupItemText>
+													<ListGroupItemText>{post.des}</ListGroupItemText>
 												</div>
 											</div>
 										</ListGroup>
