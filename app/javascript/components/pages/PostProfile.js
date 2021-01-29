@@ -39,12 +39,12 @@ class PostProfile extends Component {
 									<div>
 										<br></br>
 										<NavLink to={'/postprofile'}>
-											<Button
+											<button className='button'
 												color='secondary'
 												onClick={() => this.props.deletePost(post.id)}
 											>
 												Delete
-											</Button>
+											</button>
 										</NavLink>
 									</div>
 								</div>

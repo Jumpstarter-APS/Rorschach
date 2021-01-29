@@ -122,6 +122,18 @@ a {
 	background-color: lightblue;
 }
 
+#footer {
+	background-color: #14171A ;
+	color: white;
+	position:relative;
+	padding-bottom: .5rem;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+
+	
+}
+
 //   .bg {
 //     position: fixed;
 //     top: -40%;
@@ -306,4 +318,28 @@ body a {
 	flex-direction: column;
 	//   justify-content: center;
 	align-items: center;
+}
+
+.body-container {
+	display: flex;
+	justify-content: center;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: lightblue;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+
+}
+
+.button:hover {
+	background-color: #1DA1F2;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Button } from 'reactstrap'
+import { ListGroup, ListGroupItemText, Button, } from 'reactstrap'
 
 class PostShow extends Component {
 	render() {
@@ -9,34 +9,52 @@ class PostShow extends Component {
 		const { logged_in } = this.props
 		return (
 			<>
-				<h3>Show Page</h3>
+				<h1 style={{ textAlign: 'center' }}>Show Page</h1>
+				<div className='cats-display-wrapper'>
 				{ post && (
 				<div>
 					<div>
-				
-						<img src={post.pic} height='500px' width='500px'></img>
-						<h5>Des:{post.des}</h5>
-						<h5>ID:{post.id}</h5>
-						<h5>User ID:{post.user_id}</h5>
 
+	
+					<ListGroup
+											className='cat-wrapper'
+											style={{ width: '700px' }}
+										>
+											<img src={post.pic} style={{ width: '100%' }} />
+											<div className='cat-description-wrapper'>
+												<h4>
+													{/* This will display username */}
+													{post.id}
+													<br></br>
+												</h4>
+												<br></br>
+												<div>
+													<ListGroupItemText>{post.des}</ListGroupItemText>
+												</div>
+											</div>
+										</ListGroup>
+                                   <br></br>
 						{logged_in === true && post.user_id === current_user.id && (
+							
 							<NavLink to={'/postindex'}>
-								<Button onClick={() => this.props.deletePost(post.id)}>
+								<button className='button' onClick={() => this.props.deletePost(post.id)}>
 									Delete
-								</Button>
+								</button>
+								
 							</NavLink>
 						)}
 
 						<br />
 						<NavLink to='/postindex'>
-							<Button color='secondary'>Back to All Post</Button>
+							<button className='button'color='secondary'>Back to All Posts</button>
 						</NavLink>
 	                
 				   
 					</div>
-					
+
 				</div>
 				)}
+				</div>	
 			</>
 		)
 	}

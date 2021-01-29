@@ -72,13 +72,13 @@ class PostNew extends Component {
 		console.log('state:', this.state)
 		return (
 			<React.Fragment>
-				<h3>Add a Post</h3>
+				<h1 style={{ textAlign: 'center' }}> Add a Post</h1>
 				<div className='body-container'>
 					<div className='form'>
 						<img src={this.state.form.pic} height='600' width='600' alt='' />
 						<Form>
 							<FormGroup>
-								<Label>Description</Label>
+								<Label  style={{ display: 'flex', justifyContent: 'center'  }}> What's on your mind? </Label>
 								<Input
 									type='text'
 									name='des'
@@ -86,17 +86,20 @@ class PostNew extends Component {
 									value={this.state.form.des}
 								/>
 							</FormGroup>
-
-							<Button
+						
+							<button className='button'
 								type='submit'
-								color='secondary'
+								color='info'
 								onClick={this.handleSubmit}
 							>
 								Add a New Post
-							</Button>
-							<Button type='button' onClick={this.newPicClick}>
+							</button>
+							<br></br>
+							<br></br>
+							<button className='button' type='button'color='info' onClick={this.newPicClick}>
 								Click for New Picture({this.state.clicks}/3 clicks)
-							</Button>
+						
+							</button>
 						</Form>
 					</div>
 				</div>
