@@ -22,7 +22,7 @@ class PostProfile extends Component {
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={post.pic} />
+											<img src={post.pic} style={{ width: '100%' }} />
 											<div className='cat-description-wrapper'>
 												<h4>
 													{/* This will display username */}
