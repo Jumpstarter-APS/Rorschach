@@ -12,8 +12,15 @@ class PostIndex extends Component {
 		const { posts } = this.props
 		return (
 			<React.Fragment>
-				<h1 style={{ textAlign: 'center' }}>All the Posts</h1>
-
+				<h1 style={{ textAlign: 'center', fontSize: '5rem' }}>All the Posts</h1>
+				<hr
+					style={{
+						height: '.5rem',
+						border: 'none',
+						color: '#212529',
+						backgroundColor: '#212529',
+					}}
+				/>
 				<>
 					<div className='cats-display-wrapper'>
 						{posts &&
