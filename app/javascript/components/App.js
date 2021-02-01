@@ -188,7 +188,7 @@ class App extends Component {
               }}
             />
           } */}
-
+                    <Route path= '/aboutus' component={AboutUs} /> 
 					<Route component={NotFound} />
 				</Switch>
 				{/* <br></br>

@@ -13,6 +13,9 @@ class Header extends Component {
 							<NavLink className='header-link' href='/'>
 								Home
 							</NavLink>
+							<NavLink className='header-link' href='/aboutus'>
+								About Us
+							</NavLink>
 							<NavLink className='header-link' href='/postindex'>
 								All Posts
 							</NavLink>
