@@ -90,14 +90,6 @@
 	font-size: 20px;
 }
 
-.header {
-	font-size: 20px;
-	color: white;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
 .navLink:hover {
 	background-color: black;
 }
@@ -105,13 +97,6 @@
 .navLink {
 	display: flex;
 	justify-content: space-around;
-}
-
-.footer {
-	font-size: 20px;
-	color: black;
-	display: flex;
-	justify-content: center;
 }
 
 a {
@@ -123,55 +108,14 @@ a {
 }
 
 #footer {
-	background-color: #14171A ;
+	background-color: #14171a;
 	color: white;
-	position:relative;
-	padding-bottom: .5rem;
+	position: relative;
+	padding-bottom: 0.5rem;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-
-	
 }
-
-//   .bg {
-//     position: fixed;
-//     top: -40%;
-//     left: -50%;
-//     width: 200%;
-//     height: 200%;
-//   }
-//   .bg img {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     margin: auto;
-//     min-width: 50%;
-//     min-height: 50%;
-//   }
-
-//   .container {
-//     position: relative;
-//     text-align: center;
-//     color: white;
-//   }
-
-//   .centered {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//   }
-
-//   .bg img{
-//     /* width: 100%;
-//     height: auto */
-//     flex: none; /* keep aspect ratio */
-//     width: 50%
-
-//   }
 
 body {
 	background-color: #657786;
@@ -201,7 +145,7 @@ body {
 
 .cat-edit {
 	/* margin-left: 250px;
-    margin-right: 250px; */
+						margin-right: 250px; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -211,7 +155,7 @@ body {
 }
 .cat-edit-1 {
 	/* margin-left: 250px;
-    margin-right: 250px; */
+						margin-right: 250px; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -228,10 +172,13 @@ body {
 .cat-description-wrapper {
 	// padding: 20px;
 	/* border: 0.5px solid #d3c0bf; */
-	background-color: #f8f8f8;
+	background-color: white;
 	width: 100%;
 }
-
+#post-description-wrapper {
+	background-color: white;
+	width: 100%;
+}
 .cats-display-wrapper {
 	display: flex;
 	flex-direction: row;
@@ -244,16 +191,16 @@ body {
 	background-color: lightblue;
 }
 
-.header-h1 {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	font-family: 'Hachi Maru Pop', cursive;
-	color: coral;
-	font-size: 60px;
-	margin-top: 50px;
-}
+// .header-h1 {
+// 	display: flex;
+// 	flex-direction: row;
+// 	justify-content: center;
+// 	align-items: center;
+// 	font-family: 'Hachi Maru Pop', cursive;
+// 	color: coral;
+// 	font-size: 60px;
+// 	margin-top: 50px;
+// }
 
 .header-h1 img {
 	float: left;
@@ -330,16 +277,28 @@ body a {
 	justify-content: center;
 	align-items: center;
 	background-color: lightblue;
-    border: none;
-    color: black;
-    padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
 
+#deleteButton {
+	color: lightblue;
+	background-color: #14171a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
 
 .button:hover {
-	background-color: #1DA1F2;
+	background-color: #1da1f2;
 }

@@ -11,13 +11,21 @@ class PostProfile extends Component {
 	render() {
 		return (
 			<>
-				<h1 style={{ textAlign: 'center' }}>My Posts</h1>
+				<h1 style={{ textAlign: 'center', fontSize: '5rem' }}>My Posts</h1>
+				<hr
+					style={{
+						height: '.5rem',
+						border: 'none',
+						color: '#212529',
+						backgroundColor: '#212529',
+					}}
+				/>
 				<div className='cats-display-wrapper'>
 					{this.props.mypost &&
 						this.props.mypost.map((post, index) => {
 							return (
-								<div>
-									<NavLink to={`/postshow/${post.id}`} id='details' key={index}>
+								<div key={index}>
+									<NavLink to={`/postshow/${post.id}`} id='details'>
 										<ListGroup
 											className='cat-wrapper'
 											style={{ width: '300px' }}
@@ -39,8 +47,10 @@ class PostProfile extends Component {
 									<div>
 										<br></br>
 										<NavLink to={'/postprofile'}>
-											<button className='button'
-												color='secondary'
+											<button
+												// className='button'
+												// color='secondary'
+												id='deleteButton'
 												onClick={() => this.props.deletePost(post.id)}
 											>
 												Delete
@@ -67,6 +77,20 @@ class PostProfile extends Component {
 							)
 						})}
 				</div>
+				<br />
+				<br />
+				<NavLink to={'/postindex'}>
+					<button
+						// className='button'
+						// color='secondary'
+						// style={{ backgroundColor: '' }}
+						className='button'
+						color='secondary'
+						// id='deleteButton'
+					>
+						Back to all Posts
+					</button>
+				</NavLink>
 			</>
 		)
 	}
