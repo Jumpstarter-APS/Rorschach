@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
+import yeet from '../assets/yeet.jpg'
+import giph from '../assets/giphy.gif'
+import Footer from '../components/Footer'
 
 class Home extends Component {
     render() {
         return (
+            <React.Fragment>
+
             <div>
-                <h1 style={{ textAlign: 'center' }}>Home Page</h1>
+                <img src={yeet} className="bg"></img>
+                
+                <img src={giph} className="giph"></img>
             </div>
+            
+            
+            </React.Fragment>
+            
         );
     }
 }

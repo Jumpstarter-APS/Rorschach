@@ -114,7 +114,9 @@ a {
 	padding-bottom: 0.5rem;
 	left: 0;
 	bottom: 0;
+	right:0;
 	width: 100%;
+	// padding-top: 1rem;
 }
 
 body {
@@ -302,3 +304,27 @@ body a {
 .button:hover {
 	background-color: #1da1f2;
 }
+
+.bg {
+	position: fixed; 
+	top: 10; 
+	left: 0; 
+	  
+	/* Preserve aspet ratio */
+	min-width: 100%;
+	min-height: 100%;
+	left: 0px;
+	// top: 0px;
+	z-index: -1;
+	filter:brightness(50%);
+	
+  }
+
+//   .bg{
+// 		position: absolute;
+//   }
+
+//   .footer-problem{
+// 	  padding-bottom: 250px;
+// 	  z-index: 1
+//   }
