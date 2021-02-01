@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ListGroup, ListGroupItemText, Button } from 'reactstrap'
+import Footer from '../components/Footer'
+
 
 class PostShow extends Component {
 	render() {
@@ -64,6 +66,7 @@ class PostShow extends Component {
 						</div>
 					)}
 				</div>
+				<Footer />
 			</>
 		)
 	}

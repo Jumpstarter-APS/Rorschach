@@ -5,6 +5,8 @@ class Footer extends Component {
     render() {
         return (
             <Fragment>
+                <br></br>
+                <br></br>
                 <footer className='mt-auto' id= 'footer'>
                     <div>
                         <a href='#top'>

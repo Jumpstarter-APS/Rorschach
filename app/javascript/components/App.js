@@ -191,9 +191,9 @@ class App extends Component {
 
 					<Route component={NotFound} />
 				</Switch>
-				<br></br>
-				<br></br>
-				<Footer/>
+				{/* <br></br>
+				<br></br> */}
+				{/* <Footer/> */}
 			</Router>
 		)
 	}

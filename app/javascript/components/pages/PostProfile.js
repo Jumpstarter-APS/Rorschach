@@ -6,6 +6,8 @@ import {
 	ListGroupItemText,
 	Button,
 } from 'reactstrap'
+import Footer from '../components/Footer'
+
 
 class PostProfile extends Component {
 	render() {
@@ -91,6 +93,7 @@ class PostProfile extends Component {
 						Back to all Posts
 					</button>
 				</NavLink>
+				<Footer />
 			</>
 		)
 	}

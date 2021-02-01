@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
+import Footer from '../components/Footer'
+
 
 class PostNew extends Component {
 	constructor(props) {
@@ -113,6 +115,7 @@ class PostNew extends Component {
 					</div>
 				</div>
 				{this.state.submitted && <Redirect to='/postindex' />}
+				<Footer />
 			</React.Fragment>
 		)
 	}

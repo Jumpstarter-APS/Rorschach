@@ -6,6 +6,8 @@ import {
 	ListGroupItemText,
 	Button,
 } from 'reactstrap'
+import Footer from '../components/Footer'
+
 
 class PostIndex extends Component {
 	render() {
@@ -49,6 +51,7 @@ class PostIndex extends Component {
 							})}
 					</div>
 				</>
+				<Footer />
 			</React.Fragment>
 		)
 	}
