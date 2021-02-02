@@ -9,22 +9,31 @@ import {
 } from 'reactstrap'
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
+import blacksand from '../assets/blacksand.jpg'
+import sami from '../assets/sami.png'
+import Alejandro from '../assets/Alejandro.jpg'
+import priscila from '../assets/priscila.jpeg'
 
 
 class AboutUs extends Component {
     render() {
         return (
             <div>
-             <h1 style={{ textAlign: 'center', fontSize: '5rem' }}>About Us</h1>
+				<div>
+                <img src={blacksand} className="bg"></img>
+                
+                </div>
+
+             <h1 className= 'title-formating'>About Us</h1>
 
                 <>
-					<div className='cats-display-wrapper'>
+					<div className='cats-display-wrapper'style={{ paddingBottom: '100px' }} >
 						
 										<ListGroup
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={brokenpolaroid} style={{ width: '100%' }} />
+											<img src={sami} style={{ width: '100%' }} />
 											<div id='post-description-wrapper'>
 												<h4>
 												
@@ -33,9 +42,9 @@ class AboutUs extends Component {
 												<br></br>
 												<div>
 													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Sami</h1></ListGroupItemText>
-                                                    <h3> <a href= "https://www.linkedin.com/in/mabrouk10/"> < FaLinkedin /> </a> 
+                                                    <h3> <a id= 'icons' href= "https://www.linkedin.com/in/mabrouk10/"> < FaLinkedin /> </a> 
                                                     
-                                                    <a href="https://github.com/mabrouk10"> <FaGithub /> </a>
+                                                    <a id= 'icons' href="https://github.com/mabrouk10"> <FaGithub /> </a>
                                                     </h3>
                                                    
 												</div>
@@ -46,7 +55,7 @@ class AboutUs extends Component {
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={brokenpolaroid} style={{ width: '100%' }} />
+											<img src={Alejandro} style={{ width: '100%' }} />
 											<div id='post-description-wrapper'>
 												<h4>
 												
@@ -55,9 +64,9 @@ class AboutUs extends Component {
 												<br></br>
 												<div>
 													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Alejandro</h1></ListGroupItemText>
-                                                    <h3> <a href= "https://www.linkedin.com/in/alejandroestrada617/"> < FaLinkedin /> </a> 
+                                                    <h3> <a id= 'icons' href= "https://www.linkedin.com/in/alejandroestrada617/"> < FaLinkedin /> </a> 
                                                     
-                                                    <a href="https://github.com/aestrada611"> <FaGithub /> </a>
+                                                    <a id= 'icons' href="https://github.com/aestrada611"> <FaGithub /> </a>
                                                     </h3>
                                                    
 												</div>
@@ -68,7 +77,7 @@ class AboutUs extends Component {
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={brokenpolaroid} style={{ width: '100%' }} />
+											<img src={priscila} style={{ width: '100%' }} />
 											<div id='post-description-wrapper'>
 												<h4>
 												
@@ -78,24 +87,15 @@ class AboutUs extends Component {
 												<div>
 													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Priscila</h1></ListGroupItemText>
                                                              
-                                                    <h3> <a href= "https://www.linkedin.com/in/priscilap-developer/"> < FaLinkedin /> </a> 
+                                                    <h3> <a id= 'icons' href= "https://www.linkedin.com/in/priscilap-developer/"> < FaLinkedin /> </a> 
                                                     
-                                                     <a href="https://github.com/priscila2294"> <FaGithub /> </a>
+                                                     <a id= 'icons' href="https://github.com/priscila2294"> <FaGithub /> </a>
                                                      </h3>
-                                                    
                                                </div>
 											</div>
 										</ListGroup>
-								
-								
-		
-					</div>
-
-                    
+					</div>   
 				</>
-                
-
-                
                 <Footer />
             </div>
         );

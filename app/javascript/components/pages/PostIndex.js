@@ -7,6 +7,7 @@ import {
 	Button,
 } from 'reactstrap'
 import Footer from '../components/Footer'
+import galaxy from '../assets/galaxy.jpg'
 
 
 class PostIndex extends Component {
@@ -14,15 +15,20 @@ class PostIndex extends Component {
 		const { posts } = this.props
 		return (
 			<React.Fragment>
-				<h1 style={{ textAlign: 'center', fontSize: '5rem' }}>All the Posts</h1>
-				<hr
+
+                <div>
+                <img src={galaxy} className="bg"></img>
+                
+                </div>
+				<h1 className= 'title-formating'>All the Posts</h1>
+				{/* <hr
 					style={{
 						height: '.5rem',
 						border: 'none',
-						color: '#212529',
-						backgroundColor: '#212529',
+						color: '#fafeff',
+						backgroundColor: '#fafeff',
 					}}
-				/>
+				/> */}
 				<>
 					<div className='cats-display-wrapper'>
 						{posts &&
@@ -33,7 +39,7 @@ class PostIndex extends Component {
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={post.pic} style={{ width: '100%' }} />
+											<img loading= 'lazy' src={post.pic} style={{ width: '100%' }} />
 											<div className='cat-description-wrapper'>
 												<h4>
 													{/* This will display username */}

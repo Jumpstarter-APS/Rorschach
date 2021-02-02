@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
 import Footer from '../components/Footer'
+import galaxy2 from '../assets/galaxy2.jpg'
+
 
 
 class PostNew extends Component {
@@ -74,7 +76,12 @@ class PostNew extends Component {
 		console.log('state:', this.state)
 		return (
 			<React.Fragment>
-				<h1 style={{ textAlign: 'center', fontSize: '5rem' }}>Add a Post</h1>
+
+<div>
+                <img src={galaxy2} className="bg"></img>
+                
+                </div>
+				<h1 className= 'title-formating'>Add a Post</h1>
 				<div className='body-container'>
 					<div className='form'>
 						<img src={this.state.form.pic} height='600' width='600' alt='' />
@@ -92,7 +99,7 @@ class PostNew extends Component {
 									value={this.state.form.des}
 								/>
 							</FormGroup>
-
+                            <div className='center-buttons'>
 							<button
 								className='button'
 								type='submit'
@@ -111,7 +118,9 @@ class PostNew extends Component {
 							>
 								Click for New Picture({this.state.clicks}/3 clicks)
 							</button>
+							</div>
 						</Form>
+
 					</div>
 				</div>
 				{this.state.submitted && <Redirect to='/postindex' />}
