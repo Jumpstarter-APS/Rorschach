@@ -10,6 +10,9 @@ import {
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import blacksand from '../assets/blacksand.jpg'
+import sami from '../assets/sami.png'
+import Alejandro from '../assets/Alejandro.jpg'
+import priscilap from '../assets/priscilap.jpg'
 
 
 class AboutUs extends Component {
@@ -24,13 +27,13 @@ class AboutUs extends Component {
              <h1 className= 'title-formating'>About Us</h1>
 
                 <>
-					<div className='cats-display-wrapper'>
+					<div className='cats-display-wrapper'style={{ paddingBottom: '100px' }} >
 						
 										<ListGroup
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={brokenpolaroid} style={{ width: '100%' }} />
+											<img src={sami} style={{ width: '100%' }} />
 											<div id='post-description-wrapper'>
 												<h4>
 												
@@ -52,7 +55,7 @@ class AboutUs extends Component {
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={brokenpolaroid} style={{ width: '100%' }} />
+											<img src={Alejandro} style={{ width: '100%' }} />
 											<div id='post-description-wrapper'>
 												<h4>
 												
@@ -74,7 +77,7 @@ class AboutUs extends Component {
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={brokenpolaroid} style={{ width: '100%' }} />
+											<img src={priscilap} style={{ width: '100%' }} />
 											<div id='post-description-wrapper'>
 												<h4>
 												
@@ -88,7 +91,6 @@ class AboutUs extends Component {
                                                     
                                                      <a id= 'icons' href="https://github.com/priscila2294"> <FaGithub /> </a>
                                                      </h3>
-                                                    
                                                </div>
 											</div>
 										</ListGroup>

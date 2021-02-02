@@ -317,7 +317,7 @@ body a:hover {
 
 .bg {
 	position: fixed; 
-	// top: 10; 
+	top: 0; 
 	left: 0; 
 	width: 100%;
 	  
@@ -379,6 +379,18 @@ body a:hover {
 	
 	   
   }
+  .Type-writer{
+	  display: grid;
+	  place-items: center;
+	  font-size: 150px;
+	//   font-family: 'Courier New', Courier, monospace;
+	  color: #fafeff;
+	  animation: typing 3.5s steps(40, end),
+	  blink-caret .75s step-end infinite;
+
+  }
+
+ 
 
 //   .bg{
 // 		position: absolute;
