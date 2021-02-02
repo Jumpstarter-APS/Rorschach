@@ -7,21 +7,27 @@ import {
 	Button,
 } from 'reactstrap'
 import Footer from '../components/Footer'
+import purple from '../assets/purple.jpg'
+
 
 
 class PostProfile extends Component {
 	render() {
 		return (
 			<>
-				<h1 style={{ textAlign: 'center', fontSize: '5rem' }}>My Posts</h1>
-				<hr
+			<div>
+                <img src={purple} className="bg"></img>
+                
+                </div>
+				<h1 className= 'title-formating'>My Posts</h1>
+				{/* <hr
 					style={{
 						height: '.5rem',
 						border: 'none',
 						color: '#212529',
 						backgroundColor: '#212529',
 					}}
-				/>
+				/> */}
 				<div className='cats-display-wrapper'>
 					{this.props.mypost &&
 						this.props.mypost.map((post, index) => {

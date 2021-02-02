@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ListGroup, ListGroupItemText, Button } from 'reactstrap'
 import Footer from '../components/Footer'
+import sky from '../assets/sky.jpg'
 
 
 class PostShow extends Component {
@@ -11,6 +12,10 @@ class PostShow extends Component {
 		const { logged_in } = this.props
 		return (
 			<>
+			<div>
+                <img src={sky} className="bg"></img>
+                
+                </div>
 				{/* <h1 style={{ textAlign: 'center', fontSize: '5rem' }}>
 					Check This Post Out
 				</h1> */}

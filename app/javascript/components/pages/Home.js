@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import yeet from '../assets/yeet.jpg'
-import giph from '../assets/giphy.gif'
+import giphy2working from '../assets/giphy2working.gif'
 import Footer from '../components/Footer'
 
 class Home extends Component {
@@ -8,10 +8,10 @@ class Home extends Component {
         return (
             <React.Fragment>
 
-            <div>
                 <img src={yeet} className="bg"></img>
+            <div className="giph">
                 
-                <img src={giph} className="giph"></img>
+                <img src={giphy2working} />
             </div>
             
             
