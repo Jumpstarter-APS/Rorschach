@@ -12,7 +12,7 @@ import { FaGithub } from 'react-icons/fa';
 import blacksand from '../assets/blacksand.jpg'
 import sami from '../assets/sami.png'
 import Alejandro from '../assets/Alejandro.jpg'
-import priscilap from '../assets/priscilap.jpg'
+import priscila from '../assets/priscila.jpeg'
 
 
 class AboutUs extends Component {
@@ -77,7 +77,7 @@ class AboutUs extends Component {
 											className='cat-wrapper'
 											style={{ width: '300px' }}
 										>
-											<img src={priscilap} style={{ width: '100%' }} />
+											<img src={priscila} style={{ width: '100%' }} />
 											<div id='post-description-wrapper'>
 												<h4>
 												
