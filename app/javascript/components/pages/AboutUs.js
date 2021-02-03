@@ -41,7 +41,7 @@ class AboutUs extends Component {
 												</h4>
 												<br></br>
 												<div>
-													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Sami M</h1></ListGroupItemText>
+													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Sami</h1></ListGroupItemText>
                                                     <h3> <a id= 'icons' href= "https://www.linkedin.com/in/mabrouk10/"> < FaLinkedin /> </a> 
                                                     
                                                     <a id= 'icons' href="https://github.com/mabrouk10"> <FaGithub /> </a>
@@ -63,7 +63,7 @@ class AboutUs extends Component {
 												</h4>
 												<br></br>
 												<div>
-													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Alejandro E</h1></ListGroupItemText>
+													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Alejandro</h1></ListGroupItemText>
                                                     <h3> <a id= 'icons' href= "https://www.linkedin.com/in/alejandroestrada617/"> < FaLinkedin /> </a> 
                                                     
                                                     <a id= 'icons' href="https://github.com/aestrada611"> <FaGithub /> </a>
@@ -85,7 +85,7 @@ class AboutUs extends Component {
 												</h4>
 												<br></br>
 												<div>
-													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Priscila P</h1></ListGroupItemText>
+													<ListGroupItemText> <h1 style={{ textAlign: 'center', fontSize: '3rem' }}>Priscila</h1></ListGroupItemText>
                                                              
                                                     <h3> <a id= 'icons' href= "https://www.linkedin.com/in/priscilap-developer/"> < FaLinkedin /> </a> 
                                                     

@@ -18,15 +18,17 @@ class PostsController < ApplicationController
       end
       
     end
-    # def update
-    #   post = Post.find(params[:id])
-    #   post.update(post_params)
-    #   if apartment.valid?
-    #     render json: post
-    #   else
-    #     render json: post.errors, status: :unprocessable_entity
-    #   end
-    # end
+
+    def update
+      post = Post.find(params[:id])
+      post.update(post_params)
+      if post.valid?
+        render json: post
+      else
+        render json: post.errors, status: :unprocessable_entity
+      end
+    end
+    
     def destroy
       post = Post.find(params[:id])
       post.destroy
@@ -39,6 +41,6 @@ class PostsController < ApplicationController
     private
     #  Posts have: user_id, pic url, and description
     def post_params
-      params.require(:post).permit(:user_id, :pic, :des)
+      params.require(:post).permit(:user_id, :pic, :des, :count)
     end
 end
