@@ -236,7 +236,7 @@ body {
 }
 
 .new_user {
-	color: lightblue;
+	color: fafeff;
 	display: flex;
 	flex-direction: column;
 	//   justify-content: center;
@@ -269,11 +269,15 @@ body a:hover {
 }
 
 .field {
-	color: lightblue;
+	color: #fafeff;
 	display: flex;
 	flex-direction: column;
 	//   justify-content: center;
 	align-items: center;
+}
+
+#login {
+	color: #fafeff;
 }
 
 .body-container {
