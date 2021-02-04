@@ -9,17 +9,14 @@ import {
 import Footer from '../components/Footer'
 import purple from '../assets/purple.jpg'
 
-
-
 class PostProfile extends Component {
 	render() {
 		return (
 			<>
-			<div>
-                <img src={purple} className="bg"></img>
-                
-                </div>
-				<h1 className= 'title-formating'>My Posts</h1>
+				<div>
+					<img src={purple} className='bg'></img>
+				</div>
+				<h1 className='title-formating'>My Posts</h1>
 				{/* <hr
 					style={{
 						height: '.5rem',
@@ -33,25 +30,33 @@ class PostProfile extends Component {
 						this.props.mypost.map((post, index) => {
 							return (
 								<div key={index}>
-									<NavLink to={`/postshow/${post.id}`} id='details'>
-										<ListGroup
-											className='cat-wrapper'
-											style={{ width: '300px' }}
+									<ListGroup className='cat-wrapper' style={{ width: '300px' }}>
+										<NavLink to={`/postshow/${post.id}`} id='details'>
+											<img
+												src={post.pic}
+												style={{ width: '100%' }}
+												className='image-hover'
+											/>
+										</NavLink>
+
+										<div
+											className='cat-description-wrapper'
+											style={{
+												display: 'flex',
+												alignItems: 'center',
+												flexDirection: 'column',
+												// justifyContent: 'space-around',
+												fontSize: '2vw',
+												paddingBottom: '1vh',
+												paddingTop: '2vh',
+											}}
 										>
-											<img src={post.pic} style={{ width: '100%' }} />
-											<div className='cat-description-wrapper'>
-												<h4>
-													{/* This will display username */}
-													{post.id}
-													<br></br>
-												</h4>
-												<br></br>
-												<div>
-													<ListGroupItemText>{post.des}</ListGroupItemText>
-												</div>
+											<div>
+												<ListGroupItemText>{post.des}</ListGroupItemText>
 											</div>
-										</ListGroup>
-									</NavLink>
+											<p>{post.count || 0}</p>
+										</div>
+									</ListGroup>
 									<div>
 										<br></br>
 										<NavLink to={'/postprofile'}>

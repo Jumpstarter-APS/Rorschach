@@ -66,17 +66,15 @@ class PostIndex extends Component {
 													loading='lazy'
 													src={post.pic}
 													style={{ width: '100%' }}
+													className='image-hover'
 												/>
-												<h4>
-													{/* This will display username */}
-													{post.username}
-													<br></br>
-												</h4>
-												<br></br>
-												<div>
-													<ListGroupItemText>{post.des}</ListGroupItemText>
-												</div>
 											</NavLink>
+											<div style={{ paddingTop: '2vh' }}>
+												<ListGroupItemText style={{ textAlign: 'center' }}>
+													{post.des}
+												</ListGroupItemText>
+											</div>
+
 											<div
 												style={{
 													display: 'flex',
@@ -84,26 +82,29 @@ class PostIndex extends Component {
 													alignItems: 'center',
 													justifyContent: 'space-around',
 													fontSize: '2vw',
+													paddingBottom: '2vh',
 												}}
 											>
 												{/* put the count somewhere in card */}
 
-												<div
+												<button
 													// style={{ fontSize: '15px', textAlign: 'center' }}
+
+													className='voting'
 													disabled={this.state[post.id]}
 													onClick={() => this.onClick(post, post.count + 1)}
 												>
 													↑
-												</div>
+												</button>
 
 												{post.count || 0}
-												<div
-													// style={{ fontSize: '15px', textAlign: 'center' }}
+												<button
+													className='voting'
 													disabled={this.state[post.id]}
 													onClick={() => this.onClick(post, post.count - 1)}
 												>
 													↓
-												</div>
+												</button>
 											</div>
 										</div>
 									</ListGroup>
