@@ -4,7 +4,6 @@ import { ListGroup, ListGroupItemText, Button } from 'reactstrap'
 import Footer from '../components/Footer'
 import sky from '../assets/sky.jpg'
 
-
 class PostShow extends Component {
 	render() {
 		const { post } = this.props
@@ -12,10 +11,9 @@ class PostShow extends Component {
 		const { logged_in } = this.props
 		return (
 			<>
-			<div>
-                <img src={sky} className="bg"></img>
-                
-                </div>
+				<div>
+					<img src={sky} className='bg'></img>
+				</div>
 				{/* <h1 style={{ textAlign: 'center', fontSize: '5rem' }}>
 					Check This Post Out
 				</h1> */}
@@ -38,14 +36,16 @@ class PostShow extends Component {
 
 										// style={{ width: '100%', backgroundColor: 'white' }}
 									>
-										<h4>
-											{/* This will display username */}
-											{post.id}
-											<br></br>
-										</h4>
 										<br></br>
-										<div>
+										<div
+											style={{
+												display: 'flex',
+												alignItems: 'center',
+												flexDirection: 'column',
+											}}
+										>
 											<ListGroupItemText>{post.des}</ListGroupItemText>
+											<h1>{post.count}</h1>
 										</div>
 									</div>
 								</ListGroup>
