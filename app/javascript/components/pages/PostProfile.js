@@ -13,7 +13,9 @@ class PostProfile extends Component {
 	render() {
 		return (
 			<>
-				<div style={{ height: '100vh' }}>
+				<div
+				// style={{ height: '100vh' }}
+				>
 					<img src={purple} className='bg'></img>
 					<h1 className='title-formating'>My Posts</h1>
 					{/* <hr
@@ -48,7 +50,7 @@ class PostProfile extends Component {
 													alignItems: 'center',
 													flexDirection: 'column',
 													// justifyContent: 'space-around',
-													fontSize: '2vw',
+													// fontSize: '2vw',
 													paddingBottom: '1vh',
 													paddingTop: '2vh',
 												}}
@@ -56,7 +58,7 @@ class PostProfile extends Component {
 												<div>
 													<ListGroupItemText>{post.des}</ListGroupItemText>
 												</div>
-												<p>{post.count || 0}</p>
+												<p style={{ fontSize: '30Spx' }}>{post.count || 0}</p>
 											</div>
 										</ListGroup>
 										<div>
@@ -107,7 +109,7 @@ class PostProfile extends Component {
 						</button>
 					</NavLink>
 				</div>
-				<Footer />
+				<Footer style={{ bottom: '0' }} />
 			</>
 		)
 	}
